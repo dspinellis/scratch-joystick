@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+#
+# Read values from a joystick and forward them as broadcast events
+# to scratch
+# Based on the pygame.joystick documentation.
+#
+
 from array import array
 import socket
 import time

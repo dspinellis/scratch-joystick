@@ -89,7 +89,7 @@ while done==False:
             sendScratchCommand('broadcast "js{}bu{}"'.format(event.joy, event.button))
             print("Joystick button released.")
         if event.type == pygame.JOYAXISMOTION:
-            sendScratchCommand('sensor-update "js{}a{}" {:>6.0f}'.format(event.joy, event.axis, event.value * 1000))
+            sendScratchCommand('sensor-update "js{}a{}" {:.0f}'.format(event.joy, event.axis, event.value * 1000))
             print("Joystick axis {} value {:>6.3f}".format(event.axis, event.value))
 
 
@@ -125,7 +125,7 @@ while done==False:
 
         for i in range( axes ):
             axis = joystick.get_axis( i )
-            #sendScratchCommand('sensor-update "js{}a{}" {:>6.0f}'.format(j, i, axis * 1000))
+            #sendScratchCommand('sensor-update "js{}a{}" {:.0f}'.format(j, i, axis * 1000))
             textPrint.print(screen, "Axis {} value: {:>6.3f}".format(i, axis) )
         textPrint.unindent()
 
